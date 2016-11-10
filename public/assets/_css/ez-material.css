@@ -1,0 +1,96 @@
+/*general*/
+.margins{
+    margin: 16px;
+}
+
+/*CARDs*/
+
+.card{
+    border-radius: 2px;
+    border:1px solid rgba(0,0,0,.3);
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    background-color: #f9f9f9;
+    margin-bottom: 32px;
+}
+
+.card .title{
+    border-radius: 2px 2px 0 0;
+    background-color: gainsboro;
+    padding: 16px;
+}
+
+.card .content{
+    padding: 16px;
+}
+
+.card .footer{
+    border-radius: 0 0 2px 2px;
+    background-color: #f0f0f0;
+    padding: 16px;
+}
+
+.content-container{
+    margin: 32px;
+}
+@media (max-width: 700px) {
+    .content-container{
+        margin: 8px;
+    }
+}
+
+/*TOKENS*/
+.token{
+    /*float:left;
+    display: inline-block;*/
+    border-radius: 0 0 2px 2px;
+    border-top:1px solid rgba(0,0,0,.3);
+}
+
+.token .label{
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.token .content{
+    padding: 4px;
+    font-size: 14px;
+}
+
+@media (max-width: 500px) {
+    .token{
+        width: 100%;
+    }
+}
+
+/*HELPERS*/
+.line{
+    border-top:1px solid rgba(0,0,0,.3);
+    width: 100%;
+}
+.break{
+    margin-bottom: 32px;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .center-if-mobile {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+.no-margins{
+    margin: 0;
+}
+
+.center-vertically{
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+}
+
+.full-width{
+    width: 100%;
+}

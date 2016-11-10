@@ -1,0 +1,19 @@
+<div class="card margins">
+    <div class="title" layout="row" layout-align="center center">
+        <div flex="auto" class="center-vertically">
+            <b>Date:</b>
+        </div>
+        <md-switch ng-change="update()" class="no-margins" flex="initial" ng-model="params.date.created" ng-true-value="'Created'" ng-false-value="'Modifed'">
+            {{ params.date.created }}
+        </md-switch>
+        <div flex="initial">
+            <md-button class="md-icon-button" ng-click="remove_filters()">
+                <span class="fa fa-trash-o"></span>
+            </md-button>
+        </div>
+    </div>
+    <div>
+        <md-datepicker ng-change="update()" ng-model="params.date.start" md-placeholder="Start date"></md-datepicker>
+        <md-datepicker ng-change="update()" ng-model="params.date.end" md-placeholder="End date"></md-datepicker>
+    </div>
+</div>

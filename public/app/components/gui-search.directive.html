@@ -1,0 +1,52 @@
+<div class="search-content">
+
+    <div ng-repeat="query in params.advanced_search.queries">
+        <div class="gui-row" layout="row">
+
+            <select class="search-bar" ng-model="query.column">
+                <option value="">All Columns</option>
+                <option ng-repeat="column in columns " value="{{column.val}} ">{{column.display}}</option>
+            </select>
+
+            <!-- <input flex="auto " ng-model="query.val "> -->
+            <md-autocomplete class="search-bar" flex="auto" md-search-text="query.val" md-items="item in get_autocomplete_suggestions(query.val)" md-min-length="2" placeholder="Search">
+                <md-item-template>
+                    <span md-highlight-flags="^i">{{item}}</span>
+                </md-item-template>
+            </md-autocomplete>
+
+        </div>
+    </div>
+
+    <div layout="row">
+        <div flex="initial">
+            <button class="search-bar" ng-click="clear_advanced_query()">
+                <span class="fa fa-eraser" ></span> Clear
+            </button>
+            <button class="search-bar" ng-click="add_advanced_query()">
+                <span class="fa fa-plus"></span> Add Query
+            </button>
+        </div>
+
+
+        <div flex="auto"></div>
+
+        <select class="search-bar" flex="initial " ng-model="params.advanced_search.logic">
+            <option value="AND" >Logic Operator: AND</option>
+            <option value="OR" >Logic Operator: OR</option>
+        </select>
+
+        <select class="search-bar" flex="initial " ng-model="params.search_method ">
+            <option>New Search</option>
+            <option>Search Results</option>
+        </select>
+
+        <div flex="initial ">
+            <button class="search-bar" ng-click="submit() ">
+                <span class="fa fa-search" ></span> Search
+            </button>
+        </div>
+
+    </div>
+
+</div>

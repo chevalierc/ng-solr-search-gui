@@ -1,0 +1,21 @@
+<form layout="row " class="search-content" ng-submit="main.search('quick') ">
+
+    <!-- <input flex="auto " ng-model="main.params.term "> -->
+    <md-autocomplete class="search-bar" flex="auto" md-search-text="params.term" md-items="item in get_autocomplete_suggestions(main.params.term)" md-min-length="2" placeholder="Search">
+        <md-item-template>
+            <span md-highlight-flags="^i">{{item}}</span>
+        </md-item-template>
+    </md-autocomplete>
+
+    <select class="search-bar" flex="initial " ng-model="params.search_method ">
+        <option>New Search</option>
+        <option>Search Results</option>
+    </select>
+
+    <div flex="initial">
+        <button class="search-bar" ng-click="submit('quick')">
+            <span class="fa fa-search" ></span> Search
+        </button>
+    </div>
+
+</form>

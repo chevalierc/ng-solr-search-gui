@@ -1,0 +1,56 @@
+<div class="card margins ">
+    <div class="title " layout="row ">
+        <a flex="auto ">
+            <b>Results: </b> {{meta.message}}
+        </a>
+        <div flex="initial">
+            <label>Sort: </label>
+            <select ng-model="params.sort " ng-change="sort()">
+                <option ng-repeat="option in sort_options " value="{{option.val}} ">{{option.display}}</option>
+            </select>
+        </div>
+    </div>
+
+    <!--results-->
+    <div class="content ">
+        <div ng-repeat="result in resultsVal ">
+            <div>
+                <b class="blue-txt">{{result.experimentTitle}}</b>
+            </div>
+            <div layout="row" layout-wrap>
+                <div class="token" ng-repeat="column in columns" flex="auto" ng-if="column.show_in_results">
+                    <div class="label">
+                        {{column.display}}
+                    </div>
+                    <div class="content">
+                        <span ng-if="!column.is_date">{{result[column.val]}}</span>
+                        <span ng-if="column.is_date">{{result[column.val].display_date()}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="line "></div>
+            <div class="break "></div>
+        </div>
+    </div>
+
+    <!--paging-->
+    <div class="footer " layout="row " layout-align="center center">
+
+        <div flex="initial ">
+            <md-button class=" md-primary" ng-click="back() " ng-disabled="params.page == 1 ">
+                <span class="fa fa-chevron-circle-left "></span>
+            </md-button>
+        </div>
+
+        <div flex="initial " class="vertical-align">
+            {{meta.start}} - {{meta.end}} of {{meta.num_found}}
+        </div>
+
+        <div flex="initial">
+            <md-button class="md-primary" ng-click="next() " ng-disabled="params.page >= meta.num_of_pages">
+                <span class="fa fa-chevron-circle-right"></span>
+            </md-button>
+        </div>
+
+    </div>
+</div>

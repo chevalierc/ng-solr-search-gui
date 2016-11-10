@@ -1,0 +1,16 @@
+<div class="white-line break"></div>
+<div layout="row" layout-wrap>
+    <md-checkbox class="white-txt" flex="30" ng-repeat="column in columns" ng-model="column.show_in_results">
+        {{column.display}}
+    </md-checkbox>
+</div>
+<div layout="row" layout-align="center center">
+    <div flex="initial" class="white-txt">Results Per Page: </div>
+    <input flex="initial" style="width: 64px;" type="number" ng-model="meta.results_per_page">
+    <div flex="auto"></div>
+    <div flex="initial">
+        <md-button class="md-raised" ng-click="set_column_prefs()">
+            <span class="fa fa-floppy-o"></span> Save Result Preferences
+        </md-button>
+    </div>
+</div>

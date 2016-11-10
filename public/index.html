@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="mainController as main">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search the Scientific Data Cloud</title>
+
+    <!-- FOR ANGULAR ROUTING -->
+    <base href="/">
+
+    <!--font(s)-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <!--icons-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!--ng-material css-->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/_css/ez-material.css" rel="stylesheet">
+    <link href="assets/_css/mystyle.css" rel="stylesheet">
+
+    <!-- Core Angular dependecies-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
+
+    <!-- Angular dependecies and material-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc.5/angular-material.min.js"></script>
+
+    <!--config (Must Be Before all other non 3rd party js)-->
+    <script src="app/main/config.js"></script>
+
+    <!-- controllers -->
+    <script src="app/main/mainCtrl.js"></script>
+
+    <!--Service-->
+    <script src="app/services/search.service.js"></script>
+    <script src="app/services/query.service.js"></script>
+
+    <!--directive-->
+    <script src="app/extras/resizer.js"></script>
+    <script src="app/components/advanced-search.directive.js"></script>
+    <script src="app/components/configure.directive.js"></script>
+    <script src="app/components/date-filter.directive.js"></script>
+    <script src="app/components/facets.directive.js"></script>
+    <script src="app/components/filters.directive.js"></script>
+    <script src="app/components/gui-search.directive.js"></script>
+    <script src="app/components/quick-search.directive.js"></script>
+    <script src="app/components/results.directive.js"></script>
+
+    <!-- main Angular app files -->
+    <script src="app/app.routes.js"></script>
+    <script src="app/app.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="body" ng-view>
+
+</body>
+
+</html>

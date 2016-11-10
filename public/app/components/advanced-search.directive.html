@@ -1,0 +1,46 @@
+<form ng-submit="main.search('adv') " class="search-content">
+
+    <textarea class="full-width code" rows="4" ng-model="params.term "></textarea>
+
+    <div layout="row " class="search-content full-width">
+        <select class="search-bar" flex="auto" ng-model="column_to_add " ng-change="add_to_search() ">
+            <option value="default">Add a Column</option>
+            <option ng-repeat="column in columns " value="{{column.val}} ">{{column.display}}</option>
+        </select>
+
+        <select class="search-bar" flex="auto" ng-model="params.search_method ">
+            <option>New Search</option>
+            <option>Search Results</option>
+        </select>
+
+        <div flex="initial">
+            <button class="search-bar" ng-click="submit() ">
+                <span class="fa fa-search" ></span> Search
+            </button>
+        </div>
+
+    </div>
+
+    <div>
+        <table class="border-table white-bg full-width">
+            <tr class="border-table ">
+                <td class="border-table ">Logical Operators: </td>
+                <td class="code border-table">user: (Jeff OR Ben) AND Group: Engineering </td>
+            </tr>
+            <tr class="border-table ">
+                <td class="border-table ">Wildcards: </td>
+                <td class="code border-table">user: 'Jeff *' </td>
+            </tr>
+            <tr class="border-table ">
+                <td class="border-table ">Negation: </td>
+                <td class="code border-table">user: -Jeff</td>
+            </tr>
+            <tr class="border-table ">
+                <td class="border-table ">Range: </td>
+                <td class="code border-table">num:[10 TO *] and date: [NOW-1Year TO NOW+1Day] and user:[ben TO jeff]</td>
+            </tr>
+        </table>
+    </div>
+
+
+</form>

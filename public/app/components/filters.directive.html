@@ -1,0 +1,22 @@
+<div class="card margins">
+    <div class="title" layout="row">
+        <div flex="auto" class="center-vertically">
+            <b>Active Filters</b>
+        </div>
+        <div flex="initial">
+            <md-button class="md-icon-button" ng-click="remove_filters()">
+                <span class="fa fa-trash-o"></span>
+            </md-button>
+        </div>
+    </div>
+    <div ng-repeat="filter in params.filters" layout="row">
+        <div flex="initial">
+            <md-button class="md-icon-button no-margins" ng-click="remove_filter($index)">
+                <span class="fa fa-times-circle"></span>
+            </md-button>
+        </div>
+        <div flex class="center-vertically full-width">
+            {{filter.column.clean_text()}}{{filter.query.clean_text()}}{{filter.val ? ': ' : ''}}{{filter.val}}
+        </div>
+    </div>
+</div>

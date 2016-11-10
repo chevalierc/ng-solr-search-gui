@@ -1,0 +1,40 @@
+<div class="card margins">
+
+    <div class="title" layout="row">
+        <div flex="auto" class="center-vertically">
+            <b>Filters</b>
+        </div>
+        <md-select class="no-margins" flex="auto" ng-model="facet_to_add" ng-change="add_facet()">
+            <md-option value="default">Add a Column</md-option>
+            <md-option ng-repeat="column in columns " ng-if="column.show_in_filters" value="{{column.val}} ">{{column.display}}</md-option>
+        </md-select>
+    </div>
+
+    <div>
+        <div ng-repeat="facet in meta.facet_results">
+            <div class=line ng-if="!$first"></div>
+            <div layout="row" layout-align="start start">
+
+                <div flex="initial">
+                    <md-button class="md-icon-button no-margins" ng-click="remove_facet($index)">
+                        <span class="fa fa-times-circle"></span>
+                    </md-button>
+                </div>
+
+                <div flex="auto">
+                    <div class="facet-values">
+                        <b>{{facet.column.clean_text()}}</b>
+                    </div>
+                    <div ng-repeat="line in facet.values" layout="row">
+                        <div flex="auto" class="center-vertically">
+                            <div class="facet-values" ng-click="add_filter(line.val, facet.column)">
+                                {{line.val}}: <i>({{line.num}})</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
