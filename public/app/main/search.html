@@ -8,7 +8,7 @@
             <div class="sdc-title" layout="row">
                 <div flex="auto">
                     <span class="fa fa-cloud"></span>
-                    <b>SDC</b> Search
+                    <b>Solr</b> Search
                 </div>
                 <div flex="auto">
                     <md-progress-circular md-diameter="30" ng-if="main.searching" md-mode="indeterminate"></md-progress-circular>
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <date-filter params="main.params" search="main.refresh()"></date-filter>
+        <!-- <date-filter params="main.params" search="main.refresh()"></date-filter> -->
         <filters params="main.params" search="main.refresh()"></filters>
         <facets params="main.params" search="main.refresh()" meta="main.meta"></facets>
 
